@@ -1,0 +1,17 @@
+created:
+    - app/Http/Controllers/BookController.php
+    - database/factories/BookFactory.php
+    - database/migrations/2022_01_31_182359_create_books_table.php
+    - app/Models/Book.php
+    - database/seeders/BookSeeder.php
+    - tests/Feature/Http/Controllers/BookControllerTest.php
+    - app/Http/Requests/BookStoreRequest.php
+    - app/Http/Requests/BookUpdateRequest.php
+    - resources/views/book/index.blade.php
+    - resources/views/book/create.blade.php
+    - resources/views/book/show.blade.php
+    - resources/views/book/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    Book: { title: 'string:400', description: text, coverImage: 'string:400', expectedPublicationDate: 'nullable date' }

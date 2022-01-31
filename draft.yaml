@@ -1,0 +1,12 @@
+models:
+  Book:
+    title: string:400
+    description: text
+    coverImage: string:400
+    expectedPublicationDate: nullable date
+
+seeders: Book
+
+controllers:
+  Book:
+    resource
