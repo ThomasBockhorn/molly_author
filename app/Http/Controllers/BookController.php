@@ -13,7 +13,7 @@ class BookController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request): \Illuminate\Http\Response
+    public function index(Request $request)
     {
         $books = Book::all();
 
@@ -24,7 +24,7 @@ class BookController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request): \Illuminate\Http\Response
+    public function create(Request $request)
     {
         return view('book.create');
     }
@@ -33,7 +33,7 @@ class BookController extends Controller
      * @param \App\Http\Requests\BookStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BookStoreRequest $request): \Illuminate\Http\Response
+    public function store(BookStoreRequest $request)
     {
         $book = Book::create($request->validated());
 
@@ -47,7 +47,7 @@ class BookController extends Controller
      * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Book $book): \Illuminate\Http\Response
+    public function show(Request $request, Book $book)
     {
         return view('book.show', compact('book'));
     }
@@ -57,7 +57,7 @@ class BookController extends Controller
      * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, Book $book): \Illuminate\Http\Response
+    public function edit(Request $request, Book $book)
     {
         return view('book.edit', compact('book'));
     }
@@ -67,7 +67,7 @@ class BookController extends Controller
      * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
-    public function update(BookUpdateRequest $request, Book $book): \Illuminate\Http\Response
+    public function update(BookUpdateRequest $request, Book $book)
     {
         $book->update($request->validated());
 
@@ -81,7 +81,7 @@ class BookController extends Controller
      * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Book $book): \Illuminate\Http\Response
+    public function destroy(Request $request, Book $book)
     {
         $book->delete();
 

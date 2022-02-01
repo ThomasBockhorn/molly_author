@@ -5,7 +5,6 @@ namespace Tests\Feature\Http\Controllers;
 use App\Models\Book;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use JMac\Testing\Traits\AdditionalAssertions;
 use Tests\TestCase;
 
 /**
@@ -13,7 +12,7 @@ use Tests\TestCase;
  */
 class BookControllerTest extends TestCase
 {
-    use AdditionalAssertions, RefreshDatabase, WithFaker;
+    use RefreshDatabase, WithFaker;
 
     /**
      * @test
@@ -39,19 +38,6 @@ class BookControllerTest extends TestCase
 
         $response->assertOk();
         $response->assertViewIs('book.create');
-    }
-
-
-    /**
-     * @test
-     */
-    public function store_uses_form_request_validation(): void
-    {
-        $this->assertActionUsesFormRequest(
-            \App\Http\Controllers\BookController::class,
-            'store',
-            \App\Http\Requests\BookStoreRequest::class
-        );
     }
 
     /**
@@ -109,19 +95,6 @@ class BookControllerTest extends TestCase
         $response->assertOk();
         $response->assertViewIs('book.edit');
         $response->assertViewHas('book');
-    }
-
-
-    /**
-     * @test
-     */
-    public function update_uses_form_request_validation(): void
-    {
-        $this->assertActionUsesFormRequest(
-            \App\Http\Controllers\BookController::class,
-            'update',
-            \App\Http\Requests\BookUpdateRequest::class
-        );
     }
 
     /**
